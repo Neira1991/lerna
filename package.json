@@ -1,0 +1,32 @@
+{
+	"private": true,
+	"name": "smartBox",
+	"devDependencies": {
+		"lerna": "^2.11.0"
+	},
+	"dependencies": {
+		"next": "^6.1.1",
+		"react": "^16.4.1",
+		"react-dom": "^16.4.1"
+	},
+	"scripts": {
+		"bootstrap": "yarn install --ignore-engines && yarn lerna bootstrap",
+		"regenerate": "lerna clean --yes && rm -rf ./node_modules && yarn run bootstrap",
+		"regenerate:win": "lerna clean --yes && rd /q /s node_modules && yarn run bootstrap",
+		"deploy": "node scripts/deploy/index",
+		"lint": "./node_modules/.bin/lerna run lint --parallel",
+		"lint:fix": "./node_modules/.bin/lerna run lint:fix --parallel",
+		"test": "./node_modules/.bin/lerna run test --parallel",
+		"commit": "git-cz",
+		"precommit": "lint-staged",
+		"commitmsg": "./node_modules/.bin/commitlint -e $GIT_PARAMS",
+		"publish": "yarn lerna publish",
+		"publish-canary": "yarn lerna publish --canary --yes",
+		"publish-next": "yarn lerna publish --npm-tag=next"
+	},
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		]
+	}
+}

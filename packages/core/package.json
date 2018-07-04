@@ -1,0 +1,24 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "standard": {
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
+  "globals": [
+    "__DEV__",
+    "FormData",
+    "fetch",
+    "URL",
+    "Event"
+  ]
+}
+}
